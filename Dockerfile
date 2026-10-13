@@ -1,4 +1,3 @@
-```dockerfile
 FROM maven:3.9-eclipse-temurin-24 AS build
 WORKDIR /app
 
@@ -18,4 +17,3 @@ EXPOSE 8080
 ENV JAVA_TOOL_OPTIONS="-Xms64m -Xmx256m -XX:MaxMetaspaceSize=128m -XX:+UseSerialGC"
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
-```
