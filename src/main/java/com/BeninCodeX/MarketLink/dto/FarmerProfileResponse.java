@@ -13,11 +13,13 @@ public class FarmerProfileResponse {
     private String location;
     private String description;
     private String profileImage;
+    private Long farmerId;
 
     public FarmerProfileResponse() {
     }
 
     public FarmerProfileResponse(
+            Long farmerId,
             Long userId,
             String firstName,
             String lastName,
@@ -26,9 +28,11 @@ public class FarmerProfileResponse {
             String farmName,
             String location,
             String description,
+
             String profileImage
     ) {
         this.userId = userId;
+        this.farmerId = farmerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -37,6 +41,7 @@ public class FarmerProfileResponse {
         this.location = location;
         this.description = description;
         this.profileImage = profileImage;
+
     }
 
     public Long getUserId() {
@@ -45,6 +50,13 @@ public class FarmerProfileResponse {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+    public Long getFarmerId() {
+        return farmerId;
+    }
+
+    public void setFarmerId(Long farmerId) {
+        this.farmerId = farmerId;
     }
 
     public String getFirstName() {
@@ -102,6 +114,8 @@ public class FarmerProfileResponse {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 
     public String getProfileImage() {
         return profileImage;

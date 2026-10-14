@@ -176,6 +176,8 @@ public class FarmerProfileController {
 
                 user.getUserId(),
 
+                profile.getFarmerId(),
+
                 user.getFirstName(),
 
                 user.getLastName(),
@@ -191,6 +193,9 @@ public class FarmerProfileController {
                 profile.getDescription(),
 
                 profile.getProfileImage()
+
+
+
         );
     }
 }
