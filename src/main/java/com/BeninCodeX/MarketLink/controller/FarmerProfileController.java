@@ -30,9 +30,7 @@ public class FarmerProfileController {
         this.cloudinaryService = cloudinaryService;
     }
 
-    // ==========================================
-    // GET MY FARMER PROFILE
-    // ==========================================
+
 
     @GetMapping("/me")
     public ResponseEntity<FarmerProfileResponse> getMyFarmerProfile(
@@ -54,9 +52,6 @@ public class FarmerProfileController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    // ==========================================
-    // CREATE FARMER PROFILE
-    // ==========================================
 
     @PostMapping("/me")
     public ResponseEntity<FarmerProfileResponse> createMyFarmerProfile(
@@ -83,9 +78,6 @@ public class FarmerProfileController {
         );
     }
 
-    // ==========================================
-    // UPDATE FARMER PROFILE
-    // ==========================================
 
     @PutMapping(value = "/me", consumes = "multipart/form-data")
     public ResponseEntity<FarmerProfileResponse> updateMyFarmerProfile(
@@ -162,10 +154,6 @@ public class FarmerProfileController {
                 })
                 .orElse(ResponseEntity.notFound().build());
     }
-
-    // ==========================================
-    // BUILD RESPONSE
-    // ==========================================
 
     private FarmerProfileResponse buildResponse(
             User user,

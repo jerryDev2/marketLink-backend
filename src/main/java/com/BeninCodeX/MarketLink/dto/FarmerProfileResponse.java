@@ -18,9 +18,10 @@ public class FarmerProfileResponse {
     public FarmerProfileResponse() {
     }
 
+
     public FarmerProfileResponse(
-            Long farmerId,
             Long userId,
+            Long farmerId,
             String firstName,
             String lastName,
             String email,
@@ -28,7 +29,6 @@ public class FarmerProfileResponse {
             String farmName,
             String location,
             String description,
-
             String profileImage
     ) {
         this.userId = userId;
@@ -41,8 +41,9 @@ public class FarmerProfileResponse {
         this.location = location;
         this.description = description;
         this.profileImage = profileImage;
-
     }
+
+
 
     public Long getUserId() {
         return userId;
