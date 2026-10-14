@@ -129,15 +129,29 @@ public class OrderServiceImpl implements OrderService {
     }
 
 
+
     @Override
     public Order updateOrderStatus(long orderId, String status) {
-
         Order order = findById(orderId);
 
-        order.setStatus(status);
+        if (!status.equalsIgnoreCase("ACCEPTED")
+                && !status.equalsIgnoreCase("CANCELLED")) {
+            throw new IllegalArgumentException(
+                    "Status must be ACCEPTED or CANCELLED"
+            );
+        }
+
+        if (!"PENDING".equalsIgnoreCase(order.getStatus())) {
+            throw new IllegalStateException(
+                    "Only pending orders can be accepted or cancelled"
+            );
+        }
+
+        order.setStatus(status.toUpperCase());
 
         return orderRepository.save(order);
     }
+
     @Override
     public List<Order> findOrdersByFarmerId(long farmerId) {
         return orderRepository.findOrdersByFarmerId(farmerId);
