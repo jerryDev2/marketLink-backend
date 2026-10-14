@@ -33,7 +33,7 @@ public class Product {
     @Column(name = "unit", nullable = false)
     private String unit;
 
-    @Column(name = "imageUrl", nullable = false)
+    @Column(name = "imageUrl", nullable = false, length = 1000)
     private String imageUrl;
 
     // The farmer who owns this product
